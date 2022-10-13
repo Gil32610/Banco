@@ -53,9 +53,10 @@ public class App {
                   break;
                case 3:
                   conta.closeAccount();
-               }
+
                   break;
                case 0:
+                  System.out.println("over!");
                   break;
                default:
                   System.out.println("opção invalida");

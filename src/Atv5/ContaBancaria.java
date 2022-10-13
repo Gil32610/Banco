@@ -8,7 +8,7 @@ public class ContaBancaria {
     private Cliente cliente;
   
 
-    public ContaBancaria(Double saldo, String tipo, String senha, Cliente cliente) {
+    public ContaBancaria(String tipo, String senha, Cliente cliente) {
         this.cliente = cliente;
         this.tipo = tipo;
         this.status = true;

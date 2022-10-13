@@ -10,6 +10,12 @@ public class Cliente {
         this.RG = RG;
         this.nome = nome;
     }
+    public String getNome(){
+        return this.nome;
+    }
+    public String getRG(){
+        return this.RG;
+    }
 
     public String getEmail() {
         return email;

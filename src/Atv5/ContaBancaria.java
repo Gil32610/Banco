@@ -6,10 +6,11 @@ public class ContaBancaria extends Cliente {
     private String senha;
     private boolean status;
 
-    public ContaBancaria(String RG, String nome, String tipo) {
+    public ContaBancaria(String RG, String nome, String tipo, String senha) {
         super(nome, RG);
         this.tipo = tipo;
         this.status = true;
+        this.senha = senha;
     }
 
     public void aplicarBonus(double percentage) {
@@ -42,10 +43,10 @@ public class ContaBancaria extends Cliente {
         this.saldo += amount;
     }
 
-    public void withdraw(Double amount, String senha) {
+    public void withdraw(Double amount, String senha)throws SaldoInsuficienteException {
         if (this.senha.equals(senha)) {
             if (this.saldo < amount) {
-                System.out.println("Saldo insuficiente");
+               throw new SaldoInsuficienteException("Saldo insuficiente", null) ;
             } else {
                 this.saldo -= amount;
             }

@@ -2,13 +2,13 @@ package Atv5;
 
 public class ContaBancaria {
     private Double saldo = 0.0;
-    private String tipo;
+    private int tipo;
     private String senha;
     private boolean status;
     private Cliente cliente;
   
 
-    public ContaBancaria(String tipo, String senha, Cliente cliente) {
+    public ContaBancaria(int tipo, String senha, Cliente cliente) {
         this.cliente = cliente;
         this.tipo = tipo;
         this.status = true;

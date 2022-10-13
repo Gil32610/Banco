@@ -1,18 +1,21 @@
 package Atv5;
 
-public class ContaBancaria extends Cliente {
+public class ContaBancaria {
     private Double saldo = 0.0;
     private String tipo;
     private String senha;
     private boolean status;
+    private Cliente cliente;
+  
 
-    public ContaBancaria(String RG, String nome, String tipo, String senha) {
-        super(nome, RG);
+    public ContaBancaria(Double saldo, String tipo, String senha, Cliente cliente) {
+        this.cliente = cliente;
         this.tipo = tipo;
         this.status = true;
         this.senha = senha;
     }
 
+    
     public void aplicarBonus(double percentage) {
         this.saldo += this.saldo * (percentage / 100.00);
     }
@@ -26,12 +29,6 @@ public class ContaBancaria extends Cliente {
             if (this.saldo > 0) {
                 System.out.println("Ainda existe dinheiro na conta. Para fechar a conta deposite todo seu saldo!");
             } else {
-                this.saldo = 0.0;
-                this.nome = null;
-                this.tipo = null;
-                this.RG = null;
-                this.senha = null;
-                this.status = false;
                 System.out.println("Conta fechada!");
             }
         } else {
@@ -56,14 +53,9 @@ public class ContaBancaria extends Cliente {
     }
 
     @Override
-    public void showInfo() {
-        System.out.println(this.nome + " " + this.RG + " " + this.tipo);
-    }
-
-    @Override
     public String toString() {
-        return "ContaBancaria [saldo=" + saldo + ", nome=" + nome + ", tipo=" + tipo + ", RG=" + RG + ", status="
-                + status + "]";
+        return "ContaBancaria [saldo=" + saldo + ", tipo=" + tipo+ ", senha=" + senha + ", status=" + status + ", senha="
+                + senha + "]";
     }
 
 }

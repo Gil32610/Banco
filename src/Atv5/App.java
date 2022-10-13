@@ -70,6 +70,9 @@ public class App {
       } catch (SaldoInsuficienteException si) {
          System.out.println(si.getMessage());
       }
+      catch(NumberFormatException nf){
+         System.out.println("Valor não válido");
+      }
 
    }
 

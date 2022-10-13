@@ -10,10 +10,12 @@ public class Cliente {
         this.RG = RG;
         this.nome = nome;
     }
-    public String getNome(){
+
+    public String getNome() {
         return this.nome;
     }
-    public String getRG(){
+
+    public String getRG() {
         return this.RG;
     }
 
@@ -43,4 +45,12 @@ public class Cliente {
         return "Cliente [nome=" + nome + ", RG=" + RG + ", email=" + email + ", phone=" + phone + "]";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Cliente) {
+            Cliente aClient = (Cliente) obj;
+            return this.getRG().equals(aClient.getRG());
+        }
+        return false;
+    }
 }

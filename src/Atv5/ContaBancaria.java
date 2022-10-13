@@ -43,10 +43,10 @@ public class ContaBancaria extends Cliente {
         this.saldo += amount;
     }
 
-    public void withdraw(Double amount, String senha)throws SaldoInsuficienteException {
+    public void withdraw(Double amount, String senha) throws SaldoInsuficienteException {
         if (this.senha.equals(senha)) {
             if (this.saldo < amount) {
-               throw new SaldoInsuficienteException("Saldo insuficiente", null) ;
+                throw new SaldoInsuficienteException("Saldo insuficiente", null);
             } else {
                 this.saldo -= amount;
             }
